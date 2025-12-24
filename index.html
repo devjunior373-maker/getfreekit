@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login · GetFreeKit</title>
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="login-wrapper">
+
+    <section class="login-card">
+
+      <h1 class="login-title">GetFreeKit</h1>
+      <p class="login-subtitle">
+        Recursos gratuitos de informática
+      </p>
+
+      <form>
+
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="exemplo@email.com" required>
+        </div>
+
+        <div class="input-group">
+          <label>Senha</label>
+          <input type="password" placeholder="••••••••" required>
+          <div class="forgot">Esqueceu a senha?</div>
+        </div>
+
+        <button class="login-btn" type="submit" id="loginBtn">
+  <span class="btn-text">Entrar</span>
+  <span class="spinner"></span>
+</button>
+        
+      </form>
+
+    </section>
+
+  </main>
+  
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+
+<script>
+  const form = document.querySelector("form");
+  const btn = document.getElementById("loginBtn");
+  
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+    btn.classList.add("loading");
+    btn.querySelector(".btn-text").textContent = "Aguarde";
+    
+    // Simulação (troque pela lógica real depois)
+    setTimeout(() => {
+      btn.classList.remove("loading");
+      btn.querySelector(".btn-text").textContent = "Entrar";
+    }, 5000);
+  });
+</script>
+
+</body>
+</html>
